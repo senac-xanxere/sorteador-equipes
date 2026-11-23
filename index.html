@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorteador de Equipes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="cabecalho">
+      <h1>Sorteador de Equipes</h1>
+      <p>12 alunos divididos em 4 equipes com 3 integrantes cada</p>
+    </header>
+
+    <section class="painel-entrada">
+      <div class="campo-grupo">
+        <div class="label-linha">
+          <label for="lista-alunos">Nomes dos alunos (um por linha)</label>
+          <span id="contador" class="contador">0 / 12 alunos</span>
+        </div>
+        <textarea
+          id="lista-alunos"
+          rows="12"
+          placeholder="Digite ou cole os 12 nomes aqui, um por linha..."
+        ></textarea>
+      </div>
+
+      <details class="config-equipes">
+        <summary>Personalizar nomes das 4 equipes (opcional)</summary>
+        <div class="nomes-equipes">
+          <input type="text" class="nome-equipe" value="Equipe 1" aria-label="Nome da equipe 1" />
+          <input type="text" class="nome-equipe" value="Equipe 2" aria-label="Nome da equipe 2" />
+          <input type="text" class="nome-equipe" value="Equipe 3" aria-label="Nome da equipe 3" />
+          <input type="text" class="nome-equipe" value="Equipe 4" aria-label="Nome da equipe 4" />
+        </div>
+      </details>
+
+      <p id="mensagem" class="mensagem" role="alert" aria-live="polite"></p>
+
+      <div class="acoes">
+        <button id="btn-sortear" type="button" class="btn btn-primario">
+          Sortear Equipes
+        </button>
+        <button id="btn-exemplo" type="button" class="btn btn-secundario">
+          Preencher Exemplo
+        </button>
+        <button id="btn-limpar" type="button" class="btn btn-secundario">
+          Limpar
+        </button>
+      </div>
+    </section>
+
+    <section id="secao-resultado" class="secao-resultado oculto" aria-live="polite">
+      <div class="resultado-topo">
+        <h2>Equipes Sorteadas</h2>
+        <button id="btn-copiar" type="button" class="btn btn-secundario btn-pequeno">
+          Copiar Resultado
+        </button>
+      </div>
+      <div id="grid-equipes" class="grid-equipes"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
